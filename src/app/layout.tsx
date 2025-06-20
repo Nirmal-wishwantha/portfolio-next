@@ -28,8 +28,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
+        <div className="absolute inset-0 z-0"> ...stars... </div>
+        <div className="relative z-10"> ...content... </div>
         {children}
       </body>
     </html>
   );
 }
+

@@ -24,3 +24,43 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.stars,
+.stars2,
+.stars3 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.stars {
+  background: transparent url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png") repeat top center;
+  animation: moveStars 100s linear infinite;
+  opacity: 0.7;
+}
+
+.stars2 {
+  background: transparent url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars2.png") repeat top center;
+  animation: moveStars 160s linear infinite;
+  opacity: 0.4;
+}
+
+.stars3 {
+  background: transparent url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars3.png") repeat top center;
+  animation: moveStars 220s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 1000px 1000px;
+  }
+}
+
