@@ -97,6 +97,12 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
+        <a
+          className="underline text-blue-600 hover:text-blue-800"
+          href="/about"
+        >
+          About Me
+        </a>
       </footer>
     </div>
   );
