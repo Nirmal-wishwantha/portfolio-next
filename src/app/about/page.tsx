@@ -1,5 +1,11 @@
+import Navbar from "@/components/Navbar";
 import AboutMe from "@/components/AboutMe";
 
 export default function AboutPage() {
-    return <AboutMe />;
+    return (
+        <div>
+            <Navbar />
+            <AboutMe />
+        </div>
+    );
 }
