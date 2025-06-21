@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
+import Link from "next/link";
 import {
     Home, Edit3, MessageCircle, Users, Bell, Users2,
     FileText, Gamepad2, Settings, LogOut, ChevronLeft, ChevronRight,
 } from 'lucide-react';
 
 const menuItems = [
-    { icon: <Home size={20} />, label: 'Home' },
-    { icon: <Edit3 size={20} />, label: 'Post' },
-    { icon: <MessageCircle size={20} />, label: 'Messages' },
-    { icon: <Users size={20} />, label: 'Friends' },
-    { icon: <Bell size={20} />, label: 'Notifications', hasNotification: true },
-    { icon: <Users2 size={20} />, label: 'Group' },
-    { icon: <FileText size={20} />, label: 'Pages' },
-    { icon: <Gamepad2 size={20} />, label: 'Games' },
-    { icon: <Settings size={20} />, label: 'Setting' },
-    { icon: <LogOut size={20} />, label: 'Log Out' },
+    { icon: <Home size={20} />, label: 'Home', href: '/' },
+    { icon: <Edit3 size={20} />, label: 'About', href: '/about' },
+    { icon: <FileText size={20} />, label: 'Blog', href: '/blog' },
+    { icon: <Users size={20} />, label: 'Projects', href: '/projects' },
+    { icon: <MessageCircle size={20} />, label: 'Contact', href: '/contact' },
 ];
 
 const Sidebar: React.FC = () => {
@@ -62,8 +58,9 @@ const Sidebar: React.FC = () => {
                 {/* Menu */}
                 <nav className="flex-1 space-y-2 px-2">
                     {menuItems.map((item, idx) => (
-                        <div
+                        <Link
                             key={idx}
+                            href={item.href}
                             className={`
                 flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors cursor-pointer group relative
                 ${isCollapsed ? 'justify-center' : ''}
@@ -71,10 +68,7 @@ const Sidebar: React.FC = () => {
                         >
                             <div className="flex-shrink-0">{item.icon}</div>
                             {!isCollapsed && <span className="flex-1">{item.label}</span>}
-                            {item.hasNotification && (
-                                <div className="w-2 h-2 bg-cyan-300 rounded-full absolute right-3 top-1/2 -translate-y-1/2"></div>
-                            )}
-                        </div>
+                        </Link>
                     ))}
                 </nav>
             </div>
